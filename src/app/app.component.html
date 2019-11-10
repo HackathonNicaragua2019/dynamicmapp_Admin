@@ -1,16 +1,18 @@
 <div class="menu">
-    <button mat-button [matMenuTriggerFor]="aboveMenu">Crear</button>
+    <button mat-button [matMenuTriggerFor]="aboveMenu"><a [routerLink]="['crear']">Crear</a></button>
     <mat-menu #aboveMenu="matMenu" yPosition="above">
     </mat-menu>
     
-    <button mat-button [matMenuTriggerFor]="belowMenu">Listas</button>
+    <button mat-button [matMenuTriggerFor]="belowMenu"><a [routerLink]="['lista']">Lista</a></button>
     <mat-menu #belowMenu="matMenu" yPosition="below">
     </mat-menu>
     
-    <button mat-button [matMenuTriggerFor]="beforeMenu">Boletos</button>
+    <button mat-button [matMenuTriggerFor]="beforeMenu"><a [routerLink]="['boleto']">Boleto</a></button>
     <mat-menu #beforeMenu="matMenu" xPosition="before">
     </mat-menu>
 </div>
 <!-- <app-crear-rutas></app-crear-rutas> -->
 <!-- <app-lista-rutas></app-lista-rutas> -->
-<app-lista-pasajeros></app-lista-pasajeros>
+<!-- <app-lista-pasajeros></app-lista-pasajeros> -->
+
+<router-outlet></router-outlet>

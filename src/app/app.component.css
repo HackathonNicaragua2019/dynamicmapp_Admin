@@ -1,14 +1,21 @@
 p {
     font-family: Lato;
-  }
-  
-  agm-map {
-      height: 50vh;
-  }
+}
 
-  .menu {
+agm-map {
+    height: 50vh;
+}
+
+.menu {
     display: flex;
     justify-content: flex-end;
     background-color: darkgray;
     color: white;
-  }
+}
+
+a:link {
+    text-decoration: none;
+    font-size: 19px;
+    /* font-weight: bold; */
+    font-family: initial;
+}
