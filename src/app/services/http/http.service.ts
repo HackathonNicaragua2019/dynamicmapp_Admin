@@ -14,7 +14,7 @@ export class HttpService {
   private APIUrl = environment.API;
   private routes = 'routes';
   private buses = 'buses';
-  private
+  private stops = 'stops';
 
   constructor(private httpClient: HttpClient) {
     this.httpHeaders = new HttpHeaders()
@@ -48,6 +48,18 @@ export class HttpService {
 
   public crearBus(params) {
     const url = this.APIUrl + this.buses;
+    return this.httpClient.post(url, params);
+  }
+
+  public crearMarker(marker, id) {
+    const params = {
+      position: JSON.stringify({
+        "type": "Point",
+        "coordinates": [marker.lng, marker.lat]
+      }),
+      router_id: id
+    };
+    const url = this.APIUrl + this.stops;
     return this.httpClient.post(url, params);
   }
 }

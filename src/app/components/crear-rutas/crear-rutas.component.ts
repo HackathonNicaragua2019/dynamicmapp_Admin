@@ -8,7 +8,8 @@ import { MouseEvent } from '@agm/core';
   styleUrls: ['./crear-rutas.component.css']
 })
 export class CrearRutasComponent implements OnInit {
-  
+
+  public ruta: any;
   public name: any;
   public placa: any;
   public codigo: any;
@@ -41,11 +42,23 @@ export class CrearRutasComponent implements OnInit {
       device_id: this.codigo
     }
     this.httpService.crearBus(params).subscribe(result => {
-      console.log(result);
+      if (result) {
+        this.guardarStops();
+      }
+    });
+  }
+
+  guardarStops() {
+    this.markers.forEach(marker => {
+      this.httpService.crearMarker(marker, this.ruta.id).subscribe(result => {
+      });
     });
   }
 
   optionSelected(event) {
+    this.markers = event['stops'];
+    this.ruta = event;
+    console.log(this.markers);
     this.origin = {
       lng: event['start']['coordinates'][0],
       lat: event['start']['coordinates'][1],
@@ -74,5 +87,31 @@ export class CrearRutasComponent implements OnInit {
   Quitar(index) {
     this.markers.splice(index, 1);
   }
+
+  crearRuta() {
+    const params = {
+      start: JSON.stringify({
+        "type": "Point",
+        "coordinates": [-74.98615270853043, 40.74894149554006]
+      }),
+      end: JSON.stringify({
+        "type": "Point",
+        "coordinates": [-74.98615270853043, 40.74894149554006]
+      }),
+      route: JSON.stringify({
+        "type": "LineString",
+        "coordinates": [
+          [-74.98615270853043, 40.74894149554006],
+          [-74.98615270853043, 40.74894149554006],
+          [-74.98615270853043, 40.74894149554006]
+        ]
+      })
+    };
+
+    this.httpService.crearRuta(params).subscribe(result => {
+      console.log(result);
+    });
+  }
+
 
 }
