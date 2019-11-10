@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../../services/http/http.service';
 import { MouseEvent } from '@agm/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-crear-rutas',
@@ -24,7 +25,7 @@ export class CrearRutasComponent implements OnInit {
 
   markers: any = [];
 
-  constructor(private httpService: HttpService) { }
+  constructor(private httpService: HttpService, private _snackBar: MatSnackBar) { }
 
   public options: any;
   ngOnInit() {
@@ -33,6 +34,12 @@ export class CrearRutasComponent implements OnInit {
         this.options = result['data'];
       }
     })
+  }
+
+  openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action, {
+      duration: 2000,
+    });
   }
 
   Guardar() {
@@ -51,6 +58,9 @@ export class CrearRutasComponent implements OnInit {
   guardarStops() {
     this.markers.forEach(marker => {
       this.httpService.crearMarker(marker, this.ruta.id).subscribe(result => {
+        if (result) {
+          this.openSnackBar('Datos guardados', 'Ok');
+        }
       });
     });
   }
