@@ -57,7 +57,7 @@ export class HttpService {
         "type": "Point",
         "coordinates": [marker.lng, marker.lat]
       }),
-      router_id: id
+      route_id: id
     };
     const url = this.APIUrl + this.stops;
     return this.httpClient.post(url, params);
