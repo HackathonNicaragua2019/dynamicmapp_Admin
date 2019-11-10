@@ -10,12 +10,15 @@ import { ServicesModule } from './services/services.module';
 import { AgmCoreModule, GoogleMapsAPIWrapper } from '@agm/core';
 import { AgmDirectionModule } from 'agm-direction';
 import { environment } from './environments/environment';
-import {CrearRutasComponent} from './components/crear-rutas/crear-rutas.component'
+import {CrearRutasComponent} from './components/crear-rutas/crear-rutas.component';
+import {ListaRutasComponent} from './components/lista-rutas/lista-rutas.component';
+// import { AppRoutingModule } from './app.routing.module';
 
 @NgModule({
   imports:
     [
       BrowserModule,
+     // AppRoutingModule,
       // ComponentsModule, 
       MaterialModule,
       ServicesModule,
@@ -26,7 +29,7 @@ import {CrearRutasComponent} from './components/crear-rutas/crear-rutas.componen
       // Componente para las direcciones
       AgmDirectionModule
     ],
-  declarations: [AppComponent, CrearRutasComponent],
+  declarations: [AppComponent, CrearRutasComponent, ListaRutasComponent],
   providers: [
     GoogleMapsAPIWrapper
   ],
