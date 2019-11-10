@@ -1,0 +1,8 @@
+<my-toolbar (acselectedOption)='optionSelected($event)'>dynamicmaApp</my-toolbar>
+
+<mat-card class="example-card">
+    <agm-map [latitude]="lat" [longitude]="lng">
+        <agm-direction [origin]="origin" [destination]="destination" [waypoints]="waypoints"></agm-direction>
+        <agm-direction [origin]="origin2" [destination]="destination2" [waypoints]="waypoints"></agm-direction>
+    </agm-map>
+</mat-card>
