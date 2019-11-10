@@ -56,9 +56,8 @@ export class CrearRutasComponent implements OnInit {
   }
 
   optionSelected(event) {
-    this.markers = event['stops'];
     this.ruta = event;
-    console.log(this.markers);
+    this.ObtenerMarcadores();
     this.origin = {
       lng: event['start']['coordinates'][0],
       lat: event['start']['coordinates'][1],
@@ -68,6 +67,18 @@ export class CrearRutasComponent implements OnInit {
       lng: event['end']['coordinates'][0],
       lat: event['end']['coordinates'][1],
     }
+  }
+
+  ObtenerMarcadores() {
+    this.markers = [];
+    this.ruta.stops.forEach(item => {
+      const m = {
+        lng: item['position']['coordinates'][0],
+        lat: item['position']['coordinates'][1],
+      };
+      this.markers.push(m);
+    });
+    console.log(this.markers);
   }
 
   mapClicked($event: MouseEvent) {
