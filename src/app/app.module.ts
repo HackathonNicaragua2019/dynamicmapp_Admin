@@ -11,6 +11,7 @@ import { AgmCoreModule, GoogleMapsAPIWrapper } from '@agm/core';
 import { AgmDirectionModule } from 'agm-direction';
 import { environment } from './environments/environment';
 import {CrearRutasComponent} from './components/crear-rutas/crear-rutas.component';
+import { HttpClientModule } from '@angular/common/http';
 import {ListaRutasComponent} from './components/lista-rutas/lista-rutas.component';
 import {ListaPasajerosComponent} from './components/lista-pasajeros/lista-pasajeros.component';
 // import { AppRoutingModule } from './app.routing.module';
@@ -28,7 +29,8 @@ import {ListaPasajerosComponent} from './components/lista-pasajeros/lista-pasaje
         apiKey: environment.apiKeyGoogleMaps,
       }),
       // Componente para las direcciones
-      AgmDirectionModule
+      AgmDirectionModule,
+      HttpClientModule
     ],
   declarations: [AppComponent, CrearRutasComponent, ListaRutasComponent, ListaPasajerosComponent],
   providers: [
