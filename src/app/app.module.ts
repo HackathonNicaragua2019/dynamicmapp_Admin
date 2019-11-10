@@ -10,7 +10,8 @@ import { ServicesModule } from './services/services.module';
 import { AgmCoreModule, GoogleMapsAPIWrapper } from '@agm/core';
 import { AgmDirectionModule } from 'agm-direction';
 import { environment } from './environments/environment';
-import {CrearRutasComponent} from './components/crear-rutas/crear-rutas.component'
+import {CrearRutasComponent} from './components/crear-rutas/crear-rutas.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports:
@@ -24,7 +25,8 @@ import {CrearRutasComponent} from './components/crear-rutas/crear-rutas.componen
         apiKey: environment.apiKeyGoogleMaps,
       }),
       // Componente para las direcciones
-      AgmDirectionModule
+      AgmDirectionModule,
+      HttpClientModule
     ],
   declarations: [AppComponent, CrearRutasComponent],
   providers: [

@@ -13,6 +13,7 @@ export class HttpService {
   private httpHeaders: any;
   private APIUrl = environment.API;
   private routes = 'routes';
+  private buses = 'buses';
   private
 
   constructor(private httpClient: HttpClient) {
@@ -45,4 +46,8 @@ export class HttpService {
     return this.httpClient.delete(url, this.httpHeaders);
   }
 
+  public crearBus(params) {
+    const url = this.APIUrl + this.buses;
+    return this.httpClient.post(url, params);
+  }
 }
