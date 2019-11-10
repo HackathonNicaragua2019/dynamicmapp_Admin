@@ -1,0 +1,92 @@
+<!-- <my-toolbar (acselectedOption)='optionSelected($event)'>dynamicmaApp</my-toolbar>
+
+<mat-card class="example-card">
+    <agm-map [latitude]="lat" [longitude]="lng">
+        <agm-direction [origin]="origin" [destination]="destination" [waypoints]="waypoints"></agm-direction>
+        <agm-direction [origin]="origin2" [destination]="destination2" [waypoints]="waypoints"></agm-direction>
+    </agm-map>
+</mat-card> -->
+<div class="flex-container">
+  <div>
+  
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Nombre del conductor</mat-label>
+        <input matInput placeholder="">
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" style="margin-left: 11px">
+        <mat-label>Placa del bus</mat-label>
+        <input matInput placeholder="Placeholder">
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Origen</mat-label>
+        <mat-select placeholder="Select">
+          <mat-option value="option">Managua</mat-option>
+          <mat-option value="option">Matagalpa</mat-option>
+          <mat-option value="option">Esteli</mat-option>
+          <mat-option value="option">Jinotega</mat-option>
+        </mat-select>
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" style="margin-left: 11px">
+        <mat-label>Destino</mat-label>
+        <mat-select placeholder="">
+          <mat-option value="option">Managua</mat-option>
+          <mat-option value="option">Matagalpa</mat-option>
+          <mat-option value="option">Esteli</mat-option>
+          <mat-option value="option">Jinotega</mat-option>
+        </mat-select>
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Hora de salida</mat-label>
+        <mat-select placeholder="Select">
+          <mat-option value="option">7:00 am</mat-option>
+          <mat-option value="option">8:00 pm</mat-option>
+          <mat-option value="option">9:00 am</mat-option>
+          <mat-option value="option">10:00 am</mat-option>
+        </mat-select>
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" style="margin-left: 11px">
+        <mat-label>Hora de llegada</mat-label>
+        <mat-select placeholder="Select">
+          <mat-option value="option">7:00 am</mat-option>
+          <mat-option value="option">8:00 pm</mat-option>
+          <mat-option value="option">9:00 am</mat-option>
+          <mat-option value="option">10:00 am</mat-option>
+        </mat-select>
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Codigo de dispositivo</mat-label>
+        <input matInput placeholder="Placeholder">
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      </mat-form-field>
+    </p>
+
+    <h3>Lista de Coordenadas</h3>
+    
+  </div>
+  <div class="map">
+    <mat-card class="example-card">
+      <agm-map [latitude]="lat" [longitude]="lng">
+          <agm-direction [origin]="origin" [destination]="destination" [waypoints]="waypoints"></agm-direction>
+          <agm-direction [origin]="origin2" [destination]="destination2" [waypoints]="waypoints"></agm-direction>
+      </agm-map>
+  </mat-card> 
+  </div> 
+</div>

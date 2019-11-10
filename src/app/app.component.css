@@ -5,3 +5,10 @@ p {
   agm-map {
       height: 50vh;
   }
+
+  .menu {
+    display: flex;
+    justify-content: flex-end;
+    background-color: darkgray;
+    color: white;
+  }

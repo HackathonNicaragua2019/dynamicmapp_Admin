@@ -10,6 +10,7 @@ import { ServicesModule } from './services/services.module';
 import { AgmCoreModule, GoogleMapsAPIWrapper } from '@agm/core';
 import { AgmDirectionModule } from 'agm-direction';
 import { environment } from './environments/environment';
+import {CrearRutasComponent} from './components/crear-rutas/crear-rutas.component'
 
 @NgModule({
   imports:
@@ -25,7 +26,7 @@ import { environment } from './environments/environment';
       // Componente para las direcciones
       AgmDirectionModule
     ],
-  declarations: [AppComponent],
+  declarations: [AppComponent, CrearRutasComponent],
   providers: [
     GoogleMapsAPIWrapper
   ],

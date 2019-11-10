@@ -1,0 +1,19 @@
+p {
+  font-family: Lato;
+}
+
+agm-map {
+    height: 80vh;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  /* background-color: DodgerBlue; */
+}
+
+
+.map {
+  width: 851px;
+  height: 79%;
+}
