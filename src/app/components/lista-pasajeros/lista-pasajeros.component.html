@@ -1,0 +1,45 @@
+<div class="flex-container">
+    <div>Mario Javier Cena</div>
+    <div>Managua - Matagalpa</div>
+    <div>Mt764384</div>  
+    <div>sale: 7:21 am</div>
+    <div>llega: 9:21 am</div>
+  </div>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="nombrePasajero">
+      <th mat-header-cell *matHeaderCellDef> Nombre de pasajero </th>
+      <td mat-cell *matCellDef="let element"> {{element.nombrePasajero}} </td>
+    </ng-container>
+  
+    <!-- cedula Column -->
+    <ng-container matColumnDef="cedula">
+      <th mat-header-cell *matHeaderCellDef> Cédula </th>
+      <td mat-cell *matCellDef="let element"> {{element.cedula}} </td>
+    </ng-container>
+  
+    <!-- telefono Column -->
+    <ng-container matColumnDef="telefono">
+      <th mat-header-cell *matHeaderCellDef> Télefono </th>
+      <td mat-cell *matCellDef="let element"> {{element.telefono}} </td>
+    </ng-container>
+
+    <!-- boleto Column -->
+    <ng-container matColumnDef="nboleto">
+        <th mat-header-cell *matHeaderCellDef> N° Boleto </th>
+        <td mat-cell *matCellDef="let element"> {{element.nboleto}} </td>
+      </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>

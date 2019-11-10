@@ -12,6 +12,7 @@ import { AgmDirectionModule } from 'agm-direction';
 import { environment } from './environments/environment';
 import {CrearRutasComponent} from './components/crear-rutas/crear-rutas.component';
 import {ListaRutasComponent} from './components/lista-rutas/lista-rutas.component';
+import {ListaPasajerosComponent} from './components/lista-pasajeros/lista-pasajeros.component';
 // import { AppRoutingModule } from './app.routing.module';
 
 @NgModule({
@@ -29,7 +30,7 @@ import {ListaRutasComponent} from './components/lista-rutas/lista-rutas.componen
       // Componente para las direcciones
       AgmDirectionModule
     ],
-  declarations: [AppComponent, CrearRutasComponent, ListaRutasComponent],
+  declarations: [AppComponent, CrearRutasComponent, ListaRutasComponent, ListaPasajerosComponent],
   providers: [
     GoogleMapsAPIWrapper
   ],
